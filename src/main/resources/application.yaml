@@ -1,0 +1,48 @@
+my:
+  props2:
+    map:
+      aaa:
+        emap:
+          apple:
+            map:
+              xxx:
+                bool: false
+
+      bbb:
+        emap:
+          orange:
+            map:
+              yyy:
+                bool: true
+    list:
+      - map:
+          'b1':
+            bool: true
+    set:
+      - emap:
+          apple:
+            map:
+              'aaaa':
+                 bool: true
+  ### https://youtrack.jetbrains.com/issue/IDEA-291922
+  newprops:
+    props:
+      foo:
+        true-key: true
+        false-key: false
+    first-key: true
+    second-key: false
+  props:
+    enum-list[0]: lit11
+    enum-list[1]: lit12
+    enum-list[2]: lit13
+    string-list[0]: foo
+    string-list[1]: bar
+    string-list[2]: boo
+    pojo-list:
+      - str1: 'aaaaa'
+      - str1: 'bbbbb'
+    string-string-map:
+      'foo': 'bar'
+      'bar': 'boo'
+
