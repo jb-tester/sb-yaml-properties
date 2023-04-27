@@ -12,12 +12,24 @@ import java.util.Set;
 public class MyConfigurationProperties {
     private List<MyBean> list;
     private Map<String, MyBean> map;
-
     private Set<MyBean> set;
-    
-    public List<MyBean> getList() { return list; }
 
-    public Map<String, MyBean> getMap() { return map; }
+
+    public List<MyBean> getList() {
+        return list;
+    }
+
+    public void setList(List<MyBean> list) {
+        this.list = list;
+    }
+
+    public Map<String, MyBean> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<String, MyBean> map) {
+        this.map = map;
+    }
 
     public Set<MyBean> getSet() {
         return set;
@@ -27,18 +39,13 @@ public class MyConfigurationProperties {
         this.set = set;
     }
 
-    public void setList(List<MyBean> list) {
-        this.list = list;
-    }
-
-    public void setMap(Map<String, MyBean> map) {
-        this.map = map;
-    }
+    public enum MyEnum {APPLE, ORANGE, LEMON}
 
     public static class MyBean {
-      private Map<String, MyBean> map;
 
-      private Map<MyEnum, MyBean> emap;
+        private Map<String, MyBean> map;
+        private Map<MyEnum, MyBean> emap;
+        private boolean bool;
 
         public Map<String, MyBean> getMap() {
             return map;
@@ -60,14 +67,13 @@ public class MyConfigurationProperties {
             return bool;
         }
 
+        public boolean getBool() {
+            return bool;
+        }
+
         public void setBool(boolean bool) {
             this.bool = bool;
         }
 
-        private boolean bool;
-      public boolean getBool() { return bool; }
-
     }
-    
-    public enum MyEnum { APPLE, ORANGE, LEMON }
 }
