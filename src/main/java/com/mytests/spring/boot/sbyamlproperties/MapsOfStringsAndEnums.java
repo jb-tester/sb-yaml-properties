@@ -20,8 +20,14 @@ public class MapsOfStringsAndEnums {
     Map<String,String> stringStringMap;
     Map<String, Enum1> stringEnum1Map;
     Map<Enum1,String> enum1StringMap;
+    /**
+     * enum - enum map property.
+     */
     Map<Enum1, Enum2> enum1Enum2Map;
 
+    /**
+     * string - string map property. This doc should be ignored
+     */
     public Map<String, String> getStringStringMap() {
         return stringStringMap;
     }
@@ -42,6 +48,9 @@ public class MapsOfStringsAndEnums {
         return enum1StringMap;
     }
 
+    /**
+     * enum-String map property.
+     */
     public void setEnum1StringMap(Map<Enum1, String> enum1StringMap) {
         this.enum1StringMap = enum1StringMap;
     }

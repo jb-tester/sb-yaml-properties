@@ -4,6 +4,7 @@ import com.mytests.spring.boot.sbyamlproperties.data.Enum1;
 import com.mytests.spring.boot.sbyamlproperties.data.Pojo1;
 import com.mytests.spring.boot.sbyamlproperties.data.Pojo2;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -27,6 +28,9 @@ public class ListsAndMapsOfPOJO {
 
     Map<Enum1,Pojo1> enumPojoMap;
 
+    String[] stringsArray;
+
+    //@NestedConfigurationProperty
     Pojo2[] pojo2array;
 
     public Pojo2[] getPojo2array() {
@@ -35,6 +39,15 @@ public class ListsAndMapsOfPOJO {
 
     public void setPojo2array(Pojo2[] pojo2array) {
         this.pojo2array = pojo2array;
+    }
+
+    public String[] getStringsArray() {
+        return stringsArray;
+    }
+
+    public ListsAndMapsOfPOJO setStringsArray(String[] stringsArray) {
+        this.stringsArray = stringsArray;
+        return this;
     }
 
     public List<Pojo1> getPojoList() {

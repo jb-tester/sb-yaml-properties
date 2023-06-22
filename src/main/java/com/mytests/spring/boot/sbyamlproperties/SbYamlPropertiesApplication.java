@@ -1,7 +1,9 @@
 package com.mytests.spring.boot.sbyamlproperties;
 
+import com.mytests.spring.boot.sbyamlproperties.data.DiffStylesEnum;
 import com.mytests.spring.boot.sbyamlproperties.data.Enum1;
 import com.mytests.spring.boot.sbyamlproperties.data.Pojo1;
+import com.mytests.spring.boot.sbyamlproperties.data.Pojo2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -37,6 +39,24 @@ public class SbYamlPropertiesApplication implements CommandLineRunner {
         for (Pojo1 pojo1 : listsAndMapsOfPOJO.getPojoList()) {
             System.out.println(pojo1);
         }
+        System.out.println("--- Pojo[] ---");
+        for (Pojo2 pojo2 : listsAndMapsOfPOJO.getPojo2array()) {
+            System.out.println(pojo2.getId());
+            pojo2.getEnum1Enum2Map().forEach((k, v) -> System.out.println((k + ":" + v)));
+        }
+        System.out.println("--- kebab vs camelCase vs underscore ---");
+        DiffStylesProps diffStylesProps = ctx.getBean(DiffStylesProps.class);
+        System.out.println(diffStylesProps.getMyInnerClass().getInnerStrPropOne());
+        System.out.println(diffStylesProps.getMyInnerClass().getInnerStrPropTwo());
+        System.out.println(diffStylesProps.getProp_with_underscore());
+        for (DiffStylesEnum diffStylesEnum : diffStylesProps.getStylesEnum()) {
+            System.out.println(diffStylesEnum);
+        }
+        diffStylesProps.getStylesEnumStringMap().forEach((k, v) -> System.out.println((k + ":" + v)));
+
+        System.out.println("--- unresolved POJO property test: ---");
+        MoreInnerPOJOProperties mpp = ctx.getBean(MoreInnerPOJOProperties.class);
+        System.out.println(mpp.getMyPOJO().getTextValue());
 
     }
 

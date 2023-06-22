@@ -9,10 +9,20 @@ import java.util.Map;
  * *
  */
 public class Pojo2 {
+    String id;
     Map<String,String> stringStringMap;
     Map<String, Enum1> stringEnumMap;
     Map<Enum1,String> enumStringMap;
     Map<Enum1, Enum2> enum1Enum2Map;
+
+    public String getId() {
+        return id;
+    }
+
+    public Pojo2 setId(String id) {
+        this.id = id;
+        return this;
+    }
 
     public Map<String, String> getStringStringMap() {
         return stringStringMap;

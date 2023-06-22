@@ -24,13 +24,13 @@ my:
             map:
               'aaaa':
                  bool: true
-  ### https://youtrack.jetbrains.com/issue/IDEA-291922
+  ### https://youtrack.jetbrains.com/issue/IDEA-291922 (boolean (Boolean) properties of POJO in Map<POJO>)
   newprops:
     props:
       foo:
         true-key: true
-        false-key: false
-    first-key: true
+        false-key: off
+    first-key: off
     second-key: false
   props:
     enum-list[0]: lit11
@@ -43,6 +43,21 @@ my:
       - str1: 'aaaaa'
       - str1: 'bbbbb'
     string-string-map:
-      'foo': 'bar'
-      'bar': 'boo'
+      foo: 'bar'
+      bar: 'boo'
+    ## POJO[] arrays
+    pojo2array:
+      - id: first
+        enum1-enum2-map:
+          lit12: lit21
+      - id: second
+        enum-string-map:
+          lit12: smth
+        enum1-enum2-map:
+          lit12: lit22
+  diff-style:
+    props:
+      my-inner-class:
+        inner-str-prop-one: foo
+      prop-with-underscore: bar
 
