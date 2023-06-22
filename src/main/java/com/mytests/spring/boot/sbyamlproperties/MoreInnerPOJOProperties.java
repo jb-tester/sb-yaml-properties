@@ -24,6 +24,7 @@ public class MoreInnerPOJOProperties {
     public static class MyPOJO {
         private int numProp;
         private String textValue;
+        private String newValue;
 
         public String getTextValue() {
             return textValue;
@@ -41,6 +42,12 @@ public class MoreInnerPOJOProperties {
             this.numProp = numProp;
         }
 
+        public String getNewValue() {
+            return newValue;
+        }
 
+        public void setNewValue(String newValue) {
+            this.newValue = newValue;
+        }
     }
 }
